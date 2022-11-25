@@ -68,14 +68,14 @@ int main()
 	}
 	case 3:
 	{
-		char cuv[] = "ceva";
-		String B(cuv);
+		
+		String B((char*)"ceva");
 		String A;
-		String C(cuv);
+		String C((char*)"ayaye");
 		A.scriere();
 		C = B + A;
 		C.afisare();
-		if (C == B)
+		if (C == A)
 		{
 			cout << "\nsirurile sunt egale\n";
 		}
@@ -102,8 +102,7 @@ int main()
 			break;
 		}
 		}
-		char caut[] = "ace";
-		cont = C.cauta(caut);
+		cont = C.cauta((char*)"caut");
 		if (cont == (-1))
 		{
 			cout << "subsirul nu se afla in sir";
@@ -111,10 +110,8 @@ int main()
 		else {
 			cout << "subsirul se afla la poitia: " << cont;
 		}
-
 		return 0;
 	}
-
 	default: {
 		cout << "Introducere eronata\n";
 		return 0;
