@@ -40,6 +40,7 @@ class String {
 public:
 	String();
 	String(char*);
+	~String();
 	String(const String&);
 	String operator+(const String&);
 	String operator=(const String&);
