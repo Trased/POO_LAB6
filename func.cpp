@@ -247,25 +247,18 @@ String::String(char* cuv)
 	this->propozitie = new char[strlen(cuv)+2];
 	strcpy_s(this->propozitie,(strlen(cuv)+1),cuv);
 }
-/*
-String::~String()
-{
-	if (this->propozitie)
-	{
-		delete[] propozitie;
-	}
-}
+
 
 String::String(const String& cuv)
-{
-	this->propozitie = new char[strlen(cuv.propozitie)+2];
-	strcpy_s(this->propozitie, (strlen(this->propozitie)+1), cuv.propozitie);
+{		
+	this->propozitie = new char[strlen(cuv.propozitie)+1];
+	strcpy_s(this->propozitie, (strlen(this->propozitie)), cuv.propozitie);
 }
-*/
+
 String String::operator+(const String& cuv)
 {
 	String temp;
-	temp.propozitie = new char[strlen(this->propozitie) + strlen(cuv.propozitie)+40];
+	temp.propozitie = new char[strlen(this->propozitie) + strlen(cuv.propozitie)+1];
 	int cont = strlen(this->propozitie) + strlen(cuv.propozitie)+1;
 	for (int i=0; i < cont; i++)
 	{
@@ -287,12 +280,13 @@ String String::operator=(const String& cuv)
 	this->propozitie = new char[strlen(cuv.propozitie) + 2];
 	strcpy_s(this->propozitie, (strlen(cuv.propozitie)+1), cuv.propozitie);
 	return *this;
+
 }
 bool operator==(const String unu, const String doi)
 {
 	if (strlen(unu.propozitie) != strlen(doi.propozitie))
 	{
-		return 1;
+		return 0;
 	}
 	for (int i = 0; i < strlen(unu.propozitie); i++)
 	{
@@ -301,7 +295,7 @@ bool operator==(const String unu, const String doi)
 			return 1;
 		}
 	}
-	return 0;
+
 }
 int String::cauta(String cuv)
 {
