@@ -40,8 +40,7 @@ class String {
 public:
 	String();
 	String(char*);
-	//String(const String&);
-	//~String();
+	String(const String&);
 	String operator+(const String&);
 	String operator=(const String&);
 	friend bool operator==(const String,const String);
